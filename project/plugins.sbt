@@ -12,3 +12,9 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.7.6")
  * Install For Create Ecr
  */
 addSbtPlugin("com.mintbeans" % "sbt-ecr" % "0.15.0")
+
+/**
+ * @see: https://github.com/sbt/sbt-release
+ * Install For Create GitHub Tag
+ */
+addSbtPlugin("com.github.gseitz" % "sbt-release" % "1.0.13")
