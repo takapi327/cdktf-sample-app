@@ -31,3 +31,22 @@ region           in Ecr := Region.getRegion(Regions.AP_NORTHEAST_1)
 repositoryName   in Ecr := "project/repository_for_cdktf"
 repositoryTags   in Ecr := Seq(version.value, "latest")
 localDockerImage in Ecr := (packageName in Docker).value + ":" + (version in Docker).value
+
+/** Setting sbt-release */
+import ReleaseTransformations._
+
+releaseVersionBump := sbtrelease.Version.Bump.Bugfix
+
+releaseProcess := Seq[ReleaseStep](
+  ReleaseStep(state => Project.extract(state).runTask(login in Ecr, state)._1),
+  inquireVersions,
+  runClean,
+  setReleaseVersion,
+  ReleaseStep(state => Project.extract(state).runTask(publishLocal in Docker, state)._1),
+  ReleaseStep(state => Project.extract(state).runTask(push in Ecr, state)._1),
+  commitReleaseVersion,
+  tagRelease,
+  setNextVersion,
+  commitNextVersion,
+  pushChanges
+)
