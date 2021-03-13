@@ -21,10 +21,7 @@ enablePlugins(DockerPlugin)
 maintainer         in Docker := "happyhappy001@outlook.jp"
 dockerBaseImage              := "amazoncorretto:8"
 dockerExposedPorts in Docker := Seq(9000, 9000)
-
-javaOptions in Universal ++= Seq(
-  "-Dpidfile.path=/dev/null"
-)
+daemonUser         in Docker := "daemon"
 
 /** setting AWS Ecr */
 import com.amazonaws.regions.{Region, Regions}
