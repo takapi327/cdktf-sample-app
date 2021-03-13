@@ -30,7 +30,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config --global user.email i-happy-go-lucky-life0001@ezweb.ne.jp
-        git config --global user.name takapi327
+        git config --global user.name ${{ github.actor }}
         sbt "release with-defaults"
 
     - name: Merge master to develop
