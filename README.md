@@ -3,6 +3,10 @@
 ## 概要
 ブログ「AWSへのデプロイ自動化と、CDK for Terraformでの管理」用のサンプルアプリ
 
+## 構成図
+![image](https://user-images.githubusercontent.com/57429437/111021925-ee773680-8412-11eb-81bc-e587134ef492.png)
+
+
 ## ブログ
 [[1章] AWSへのデプロイ自動化と、CDK for Terraformでの管理](https://medium.com/nextbeat-engineering/1%E7%AB%A0-aws%E3%81%B8%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4%E8%87%AA%E5%8B%95%E5%8C%96%E3%81%A8-cdk-for-terraform%E3%81%A7%E3%81%AE%E7%AE%A1%E7%90%86-425aaf06757e)
 
