@@ -31,3 +31,20 @@
 ```
 $ git clone git@github.com:takapi327/cdktf-sample-app.git
 ```
+
+### 設定
+build.sbtの以下該当箇所を自分用に修正
+```sbt
+maintainer in Docker := "自分のメールアドレスに変更"
+...
+repositoryName in Ecr := "PUSHしたいECRリポジトリ"
+```
+
+.github/workflows/develop.ymlを修正
+```yml
+  run: |
+    git config --global user.email "自分のメールアドレスに変更"
+    git config --global user.name ${{ github.actor }}
+    sbt "release with-defaults"
+
+```
