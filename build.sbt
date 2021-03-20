@@ -1,4 +1,4 @@
-name := """cdktf-sample-app"""
+name         := """cdktf-sample-app"""
 organization := "com.example"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
